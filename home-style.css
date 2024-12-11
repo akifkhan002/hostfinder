@@ -1,0 +1,782 @@
+:root{
+    --primary: #333;
+    --hover: #555;
+    --text: #555;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+}
+
+.button {
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: large;
+    /* font-weight: bold; */
+    cursor: pointer;
+
+}
+.button:hover {
+    background-color: var(--hover);
+}
+
+body {
+    font-family: "SUSE", sans-serif;
+}
+a{
+    text-decoration: none;
+    text-transform: none;
+}
+#bg{
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    /* background-color:#dfe9f3 ; */
+}
+
+/* Navigation Bar */
+#logobar{
+    margin: auto;
+    padding: 10px 20px;
+    width: 60vw;
+    border-radius: 0 0 100px 100px;
+    color: #fff;
+    background-color: var(--primary);
+    font-weight: bolder;
+    font-size: 50px;
+    text-align: center;
+}
+#logobar > a{
+    color: #fff;
+}
+.navbar {
+    margin:  5px auto;
+    padding: 20px;
+    width: 50vw;
+    border-radius: 20px;
+    color: #fff;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 10px;
+    left: 0;
+    z-index: 10;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 20px;
+    /* margin: 10px 0; */
+    color: white; 
+    text-align: center;
+    background-image: url(images/hero1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+}
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.section{
+    padding: 50px 0px;
+}
+.section > h1{
+    font-size: 3em;
+    margin: 10px 40px;
+    border-bottom: 2px solid black;
+}
+
+#roomate-finder {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(images/hero2.jpg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#roomate-finder h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#roomate-finder h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#roomate-finder p {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+#hero-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: auto;
+}
+
+.hero-sections {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* To fit both hero sections side by side */
+}
+
+.hero {
+    flex: 0 0 100%; /* Each section takes full width */
+    height: 60vh;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: auto;
+}
+#roomate-finder p{
+    color: #000;
+}
+#accommodationSearchInput{
+    margin: 20px;
+    padding: 15px 20px;
+    width: 50%;
+    font-size: large;
+
+    border: none;
+    /* border: 2px solid black; */
+
+    border-radius: 100px;
+}
+
+
+/* Filter Section */
+#search{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    min-height: 500px;
+
+    /* border: 2px solid black; */
+    /* gap: 10px; */
+}
+
+#search > section{
+    /* margin: 20px; */
+    min-height: 500px;
+    /* box-shadow: 5px 5px 10px gray; */
+}
+#map{
+    width: 100vw;
+    /* height: 100%; */
+    margin: 20px;
+    border-radius:40px;
+    box-shadow: 0 0 10px gray;
+}
+#filterForm{
+    z-index: 1000;
+}
+.filter-section {
+    width: 25vw;
+    padding: 20px 40px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    /* margin: 20px 0 20px 20px; */
+    /* background-color: #fff; */
+    /* border-radius: 40px 0 0 40px; */
+    /* top: 0; */
+    /* max-width: 50vw; */
+
+    /* border: 2px solid black; */
+}
+.filter-section select {
+    margin: 5px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#accommodationList{
+    margin: 10px auto;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow:  0 0 10px gray;
+}
+#accommodationList > div{
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+#accommodationList > div:first-child{
+    border-radius: 20px 20px 0 0;
+}
+#accommodationList > div:last-child{
+    border-bottom: none;
+    border-radius: 0 0 20px 20px;
+}
+#accommodationList > div:hover{
+    background-color: #e0e0e0;
+}
+
+
+/* Main Content */
+.accommodations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.accommodation-card {
+    background-color: #fff;
+    width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.accommodation-card:hover {
+    transform: scale(1.05);
+}
+.accommodation-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.accommodation-card .details {
+    padding: 15px;
+    text-align: center;
+}
+.accommodation-card h3 {
+    font-size: 1.5rem;
+}
+.accommodation-card p {
+    color: var(--text);
+    margin: 5px;
+
+}
+
+/* Accommodation Details Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 70vw;
+    /* max-width: 800px; */
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    margin: 10px;
+
+    display: flex;
+    gap: 20px;
+}
+
+.image-gallery {
+    padding-top: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-gallery img#accommodationImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.image-thumbnails .thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.image-thumbnails .thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.details-section {
+    width: 50%;
+}
+
+.details-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.details-section p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: var(--text);
+}
+.contact-button{
+    margin: 10px auto;
+    text-align: center;
+}
+.contact-button button{
+    font-weight: bold;
+    background-color: #007BFF;
+    width: 100%;
+}
+.contact-button button:hover{
+    background-color: #0056b3;
+
+}
+
+/* .facilities-list li:hover {
+    transform: scale(1.1);
+    background-color: #ddd;
+} */
+
+#home-search {
+    margin: 20px;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+#home-search {
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.5s ease, height 0.5s ease;
+    overflow: hidden; /* Prevents content from spilling out during the height transition */
+}
+
+#accommodationSearchInput{
+    margin: 20px auto;
+}
+
+.results {
+    /* margin: 20px; */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.results img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.results div{
+    background-color: #FFF;
+
+}
+
+/* Facilities List Styling */
+.facilities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.facilities-list li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    border: 1px solid #ddd;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    /* transition: transform 0.2s ease; */
+}
+
+
+#about{
+    padding: 80px 20px;
+}
+#about > div{
+    margin: 10px;
+    /* height: 400px; */
+    display: flex;
+    
+    background-color: #fff;
+    /* border: 2px solid black; */
+    box-shadow: 0 0 10px gray;
+}
+#about p{
+    text-align: justify;
+}
+#host-about{
+    border-radius: 0 100px 0 0;
+}
+#roommate-about{
+    border-radius: 0 0 0 100px;
+
+}
+.about-image{
+    width: 40%;
+}
+.about-image>img{
+    width: 100%;
+    height: 100%;
+    /* height: 400px; */
+    object-fit: cover;
+}
+.about-info{
+    padding:30px;
+    width: 60%;
+}
+
+/* Footer */
+#footer {
+    background-color: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    /* margin-top: 30px; */
+    /* height: 200px; */
+}
+
+ /* Modal for Login/Register  */
+
+.login-modal-content {
+    background-color: #fff;
+    margin:10% auto;
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    text-align: center;
+} 
+
+.login-modal-content h2 {
+    margin-bottom: 10px;
+}
+.login-modal-content p {
+    margin: 10px 0;
+}
+.login-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.login-modal-content button {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-modal-content button:hover {
+    background-color: #aaa;
+   
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: end;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Profile Page */
+.profile-page {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+.profile-page h2 {
+    margin-bottom: 10px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    #logo{
+        font-size: 30px;
+    }
+    .navbar {
+        width: 80vw;
+    }
+    .navbar a {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .hero h1,h2{
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .accommodation-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    .modal-content {
+        width: 90vw;
+        max-width: 90vw;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-gallery, .details-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-gallery img#accommodationImage {
+        /* width: 80%; */
+        height: auto;
+        max-height: 250px;
+    }
+
+    .image-thumbnails {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .image-thumbnails .thumbnail {
+        width: 60px;
+        height: 45px;
+    }
+
+    .details-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .details-section p, .facilities-list li {
+        font-size: 0.9rem;
+    }
+    #about{
+        margin: 0;
+        padding: 0;
+    }
+    #about > div {
+        flex-direction: column; /* Stack content vertically */
+        height: auto; /* Adjust height automatically */
+        border-radius: 0; /* Remove specific border-radius for a simpler look */
+    }
+
+    .about-image {
+        width: 100%; /* Make the image take full width */
+        height: 200px; /* Limit the height for smaller screens */
+    }
+
+    .about-image > img {
+        height: 100%; /* Ensure the image scales correctly */
+    }
+
+    .about-info {
+        width: 100%; /* Make the text content take full width */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .hero h1,h2{
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .navbar a {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+    .nav-btn{
+        font-size: 1em;
+    }
+    #search-bar{
+        font-size: medium;
+    }
+    .login-modal-content {
+        margin:30% auto;
+    } 
+    #about{
+        margin: 0;
+        padding: 0;
+    }
+    #about p {
+        font-size: 0.9rem; /* Adjust font size for readability */
+        padding: 5px;
+    }
+
+    .about-image {
+        height: 150px; /* Further reduce image height */
+    }
+
+    .about-info h1 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .about-info {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 10px;
+    }
+    .hero h1 {
+        font-size: 2rem; /* Further reduce the size for smaller screens */
+    }
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .hero .button {
+        font-size: 0.8rem;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 10px;
+    }
+    .hero h1 {
+        font-size: 1.8rem; /* Reduce heading size for very small screens */
+    }
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    .hero p {
+        font-size: 0.8rem;
+    }
+    .hero .button {
+        font-size: 0.7rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #roomate-finder h1 {
+        font-size: 1.8rem;
+    }
+    #roomate-finder h2 {
+        font-size: 1.3rem;
+    }
+    #roomate-finder p {
+        font-size: 0.8rem;
+    }
+    #roomate-finder .button {
+        font-size: 0.7rem;
+        padding: 8px 15px;
+    }
+}

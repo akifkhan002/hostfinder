@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <div class="navbar">
+        <a href="#accommodations-section">Accommodations</a>
+        <a href="#roommates-section">Users</a>
+        <!-- <a href="#footer">Contact</a> -->
+        <!-- <a href="">Profile</a> -->
+    </div>
+
+    <main>
+        <section>
+            <div class="admin-search">
+
+                <h1>Manage requests</h1>
+            </div>
+            <div id="requestsContainer" class="requests-container">
+                <!-- Requests will be dynamically populated here -->
+            </div>
+        </section>
+        
+        <section id="accommodations-section">
+            <section class="admin-search">
+                <h2>Manage Accommodations</h2>
+                <!-- <h3>Search Accommodations</h3> -->
+                <form id="searchForm" onsubmit="searchAccommodation(event)">
+                    <input type="text" id="accommodationSearchInput" placeholder="Enter accommodation name" required>
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <div id="accommodationSearchResults" class="results">
+                    <!-- Search results will be displayed here -->
+                </div>
+            </section>
+
+            <div id="accommodations-container">
+                <!-- Accommodation data dynamically loaded here -->
+            </div>
+        </section>
+
+        <section id="roommates-section">
+            <section class="admin-search">
+                <h2>Manage Roommate</h2>
+                <!-- <h3>Search Users</h3> -->
+                <form id="searchForm" onsubmit="searchUser(event)">
+                    <input type="text" id="userSearchInput" placeholder="Enter user name" required>
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <div id="userSearchResults" class="results">
+                    <!-- Search results will be displayed here -->
+                </div>
+            </section>
+
+            <div id="roommates-container">
+                <!-- Roommate data dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+/* General Styles */
+:root{
+    --primary: #2C3E50;
+    --hover: #676767;
+    --text: #555;
+}
+
+*{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F7FC; /* Light Gray Background */
+    color: #333; /* Dark Text */
+}
+
+header {
+    background-color: #2C3E50; /* Dark Blue */
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navbar {
+    margin:  5px auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 50vw;
+    background-color: var(--primary);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: sticky; */
+    top: 10px;
+    left: 0;
+    z-index: 10;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: large;
+}
+.navbar a:hover {
+    background-color: var(--hover);
+    border-radius: 5px;
+}
+
+section{
+    padding: 50px 0; 
+}
+
+.requests-container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.request-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.request-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.request-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.request-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.request-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.request-actions .approve {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.request-actions .reject {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+
+.admin-search {
+    margin: 20px;
+    padding: 5px 20px;
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-search input {
+    padding: 10px;
+    width: 50%;
+    font-size: 1rem;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.results {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.results img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.results div{
+    background-color: #FFF;
+
+}
+#accommodations-container, #roommates-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    width: 300px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; 
+}
+.card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+.card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.delete-button {
+    margin: 20px auto;
+    background-color: #E74C3C; /* Red */
+    color: white;
+    border: none;
+    padding: 8px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #C0392B; /* Darker Red */
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
+            key: "AIzaSyDLGBIdFzZTw0OoopeUXSC5S6HG_1KHQ8w",
+            v: "weekly",
+        });
+    </script>
+
+
+    <title>HostFinder - Find Your Perfect Accommodation</title>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="home-style.css">
+</head>
+
+<body>
+    <main id="bg">
+        <!--------------------------------- Navigation Bar ----------------------------------------->
+        <div id="logobar">
+            <a href="#" id="logo">HostFinder</a>
+        </div>
+        <div class="navbar">
+            <div>
+                <a href="#logobar" class="button">Home</a>
+                <a href="#about" class="button">About</a>
+                <!-- <a href="#footer" class="button">Contact</a> -->
+                <a href="owner.html" class="button">Profile</a>
+            </div>
+        </div>
+        <!--------------------------------- Hero section ----------------------------------------->
+        <div id="hero-carousel">
+            <button class="nav-btn prev" onclick="showPrevious()">&#10094;</button>
+
+            <div class="hero-sections">
+                <section class="hero" id="home">
+                    <h1>Welcome to HostFinder</h1>
+                    <p>Find the perfect place to stay from our extensive list of accommodations tailored to meet your
+                        needs.</p>
+                    <form id="searchForm" oninput="searchAccommodation(event)" onsubmit="searchAccommodation(event)">
+                        <input type="text" id="accommodationSearchInput" placeholder="Search accommodation"">
+                    </form>
+                </section>
+
+                <section class=" hero" id="roomate-finder">
+                        <h1>Looking for a roommate?</h1>
+                        <h2>We've got you covered.</h2>
+                        <p>Find compatible roommates or housemates based on preferences and lifestyle.</p>
+                        <button class="button" onclick="window.location.href='roommate.html'">Roommate Finder</button>
+                </section>
+
+            </div>
+            <button class="nav-btn next" onclick="showNext()">&#10095;</button>
+        </div>
+
+        <!--------------------------------- Search results display ----------------------------------------->
+
+          <section id="home-search" style="display: none;">
+            <h2>Search results</h2>
+            <div id="accommodationSearchResults" class="results">
+                <!-- Search results will be displayed here -->
+            </div>
+            <button class="button" onclick="closeHomeSearch()">Close</button>
+        </section>
+
+        <!--------------------------------- Filter section ----------------------------------------->
+
+        <section id="search">
+            <section class="filter-section">
+                <form id="filterForm" onchange="filterAccommodations(event)">
+                    <select id="locationDropdown" name="locationDropdown">
+                        <option value="">Select location</option>
+                    </select>
+                </form>
+                <div id="accommodationList">
+                </div>
+            </section>
+            <section id="map">
+            </section>
+        </section>
+
+        <!--------------------------------- Accommodations display section ----------------------------------------->
+
+        <section class="section">
+            <h1>Suggestions</h1>
+            <section class="accommodations">
+                <!-- accommodaiton cards -->
+            </section>
+        </section>
+
+        <!-- Accommodation Details Modal -->
+        <div id="accommodationModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- Left Side: Image Gallery -->
+                    <div class="image-gallery">
+                        <img id="accommodationImage" src="" alt="Accommodation Image">
+                        <div class="image-thumbnails" id="imageThumbnails">
+                            <!-- Thumbnails dynamically added via JavaScript -->
+                        </div>
+                    </div>
+                    <!-- Right Side: Details -->
+                    <div class="details-section">
+                        <span class="close">&times;</span>
+                        <h2 id="accommodationName"></h2>
+                        <p><strong>Address:</strong> <span id="accommodationAddress"></span></p>
+                        <hr>
+                        <p><strong>Landmark:</strong> <span id="accommodationLandmark"></span></p>
+                        <p><strong>Price:</strong>₹<span id="accommodationPrice"></span> per room <br>
+                            *on sharing, price will be devided accordingly</p>
+                        <p><strong>Description:</strong> <span id="accommodationDescription"></span></p>
+                        <p><strong>Total Rooms:</strong> <span id="accommodationRooms"></span></p>
+                        <p><strong>Gender Preference:</strong> <span id="genderPreference"></span></p>
+                        <p><strong>Food Type:</strong> <span id="foodType"></span></p>
+                        <p><strong>Room Sharing:</strong> <span id="roomSharing"></span> available</p>
+                        <p><strong>Bathrooms:</strong> <span id="bathroom"></span> available</p>
+                        <p><strong>Restrictions:</strong> <span id="restrictions"></span></p>
+                        <ul class="facilities-list" id="facilitiesList">
+                            <!-- Facilities dynamically added via JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-button">
+                    <button class="button" onclick="showOwnerDetails()">Contact</button>
+                </div>
+            </div>
+        </div>
+
+        <!--------------------------------- About section ----------------------------------------->
+
+        <section id="about">
+            <div id="host-about">
+                <div class="about-image">
+                    <img src="images/about1.jpg" alt="image">
+                </div>
+                <div class="about-info">
+                    <h1>What we do</h1>
+                    <hr><br>
+                    <p>
+                        <b>HostFinder</b> is your trusted platform for finding the perfect accommodation and connecting
+                        with
+                        compatible roommates. Whether you’re a student, a working professional, or someone relocating to
+                        a new city, we make the process of finding a place to stay seamless and hassle-free. Our
+                        extensive database includes verified PGs, hostels, and shared accommodations tailored to meet
+                        your preferences, such as budget, location, and amenities like Wi-Fi, food options, and
+                        security. We bridge the gap between property owners and seekers, providing direct communication
+                        and transparent dealings to ensure you find the ideal match for your needs. <br><br>
+                        We provide a platform that connects you with:
+                        <br><b>Verified PGs & Accommodations:</b> Discover safe, comfortable, and affordable places to
+                        stay.
+                        <br><b>Roommate Matching Services:</b> Find the right roommate to share your living space and
+                        expenses.
+                        <br><b>Customizable Preferences:</b> Filter accommodations based on your specific needs—budget,
+                        location, food preferences, and more.
+                        <br><b>Owner-Direct Listings:</b> Directly interact with property owners without intermediaries,
+                        ensuring a hassle-free experience.
+                    </p>
+                </div>
+            </div>
+            <div id="roommate-about">
+                <div class="about-info">
+                    <h1>Our services</h1>
+                    <hr><br>
+                    <p>
+                        Our <b>Roommate Finder</b> service is designed to help you find the right person to share your
+                        living
+                        space. With personalized matching based on preferences like location, gender, profession, and
+                        lifestyle habits, we ensure you connect with someone compatible. You can browse detailed
+                        profiles, post your own requirements, and communicate securely with potential roommates. Safety
+                        is our priority, with verified profiles and listings to give you peace of mind. Whether you’re
+                        looking to share expenses or simply seeking good companionship, HostFinder simplifies the
+                        journey of finding a roommate who aligns with your preferences and lifestyle.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about2.jpg" alt="image">
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="contact">
+            <button onclick="window.location.href = 'owner.html'" class="button">Post your accommodation</button>
+        </section> -->
+    </main>
+
+    <!--------------------------------- Footer section ----------------------------------------->
+
+    <footer id="footer">
+        <p><b>Contact us:</b><br>
+            <u>Email  --  </u><br>
+            <u>Facebook  --  </u><br>
+            <u>Instagram  --  </u><br>
+            <u>Twitter  --  </u>
+        </p><br>
+        <p>Designed and developed by GROUP5&#9829;</p>
+        <br>
+        <p>&copy; 2024 HostFinder. All rights reserved.</p>
+    </footer>
+
+    <script src="home-script.js"></script>
+    <script src="map.js"></script>
+
+</body>
+
+</html>

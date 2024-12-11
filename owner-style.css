@@ -1,0 +1,453 @@
+:root {
+    --primary: #333;
+    --hover: #555;
+    --text: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "SUSE", sans-serif;
+    scroll-behavior: smooth;
+}
+
+#bg {
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    padding-bottom: 20px;
+    min-height: 90vh;
+}
+
+a {
+    text-decoration: none;
+    text-transform: none;
+}
+
+#logobar{
+    margin: auto;
+    padding: 10px 20px;
+    width: 60vw;
+    border-radius: 0 0 100px 100px;
+    color: #fff;
+    background-color: var(--primary);
+    font-weight: bolder;
+    font-size: 50px;
+    text-align: center;
+}
+#logobar > a{
+    color: #fff;
+}
+
+/* Navigation Bar */
+.navbar {
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 50vw;
+    background-color: var(--primary);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 10px;
+    left: 0;
+    z-index: 10;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: large;
+}
+
+.navbar a:hover {
+    background-color: var(--hover);
+    border-radius: 5px;
+}
+
+/* Modal for Login/Register  */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    /* width: 80vw; */
+    max-width: 800px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    display: flex;
+    gap: 20px;
+}
+
+.login-modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.login-modal-content p {
+    margin: 10px 0;
+}
+
+.login-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-modal-content button {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-modal-content button:hover {
+    background-color: #aaa;
+
+}
+
+#ownerAccommodationSection {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+#ownerAccommodationSection h1 {
+    font-size: 2rem;
+    color: #2C3E50;
+    /* Dark Blue */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#accommodationDetails h2 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    /* Dark Blue */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#accommodationDetails p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+#accommodationDetails p strong {
+    color: #333;
+    /* Darker Gray for labels */
+}
+
+#accommodationDetails ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+#accommodationDetails ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#accommodationDetails div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#accommodationDetails button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#accommodationDetails button:hover {
+    background-color: #0056b3;
+    /* Darker Blue */
+}
+
+
+/* Accommodation Form */
+#accommodationForm {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#accommodationForm * {
+    margin: 5px 0;
+}
+
+#accommodationForm h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#accommodationForm input,
+#accommodationForm select,
+#accommodationForm textarea,
+#accommodationForm button {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#accommodationForm textarea {
+    resize: none;
+    height: 80px;
+}
+
+#accommodationForm button {
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+#accommodationForm button:hover {
+    background-color: var(--hover);
+}
+
+/* Room Sharing and Bathrooms Section */
+/* Styling for Room Sharing and Bathrooms Checkboxes */
+#accommodationForm div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Spacing between items */
+    margin-bottom: 10px;
+    /* Space between groups */
+}
+
+#accommodationForm label {
+    font-weight: bold;
+    margin-right: 10px;
+    /* Space between label and checkboxes */
+    white-space: nowrap;
+    /* Prevent label text from wrapping */
+}
+
+#accommodationForm input[type="checkbox"] {
+    margin-right: 5px;
+    /* Space between checkbox and label text */
+    transform: scale(1.2);
+    /* Make the checkboxes larger for better visibility */
+    cursor: pointer;
+    /* Add a pointer cursor for better UX */
+    width: 20px;
+}
+
+#accommodationForm div>input[type="checkbox"]+label {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#accommodationForm div input[type="checkbox"]+label:hover {
+    color: var(--hover);
+    /* Change label color on hover */
+}
+
+
+/* No Accommodation Message */
+#noAccommodationSection {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#noAccommodationSection h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#noAccommodationSection p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#noAccommodationSection button {
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#noAccommodationSection button:hover {
+    background-color: var(--hover);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: end;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer */
+#footer {
+    background-color: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    /* margin-top: 30px; */
+    /* height: 200px; */
+}
+
+/* Media Queries */
+
+/* For screens smaller than 768px (Large Mobile) */
+@media (max-width: 768px) {
+
+    #accommodationForm,
+    #noAccommodationMessage {
+        padding: 15px;
+        width: 90%;
+    }
+
+    #accommodationForm h2 {
+        font-size: 1.5rem;
+    }
+
+    #noAccommodationMessage h1 {
+        font-size: 1.8rem;
+    }
+
+    #noAccommodationMessage p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #logo {
+        font-size: 40px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .login-modal-content {
+        width: 60vw;
+        padding: 15px;
+    }
+
+    #footer {
+        padding: 30px;
+    }
+}
+
+/* For screens smaller than 480px (Small Mobile) */
+@media (max-width: 480px) {
+    #logobar {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.8rem;
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+
+    .login-modal-content {
+        margin-top: 40%;
+        width: 90vw;
+        padding: 10px;
+    }
+
+    .login-modal-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .login-modal-content p,
+    .login-modal-content input,
+    .login-modal-content button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #footer {
+        padding: 20px;
+    }
+}

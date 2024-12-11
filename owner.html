@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="owner-style.css">
+</head>
+
+<body>
+    <main id="bg">
+        <!-- Navigation Bar -->
+
+        <div id="logobar">
+            <a href="#" id="logo">HostFinder</a>
+        </div>
+        <div class="navbar">
+            <div>
+                <a href="#" onclick="openHomePage()">Home</a>
+                <a href="#footer">Contact</a>
+                <a href="#footer" onclick="openLoginModal()">Login</a>
+                <!-- <a href="#" id="login" onclick="openLoginModal()" style="display: block;">Login</a>
+                <a href="#" id="logout" onclick="logout()" style="display: none;">Logout</a> -->
+            </div>
+        </div>
+        <!-- <h1>Welcome, Owner</h1> -->
+        <!-- Accommodation Details Section -->
+        <!-- No Accommodation Message -->
+        <div id="noAccommodationSection" style="display: none;">
+            <h1>No Accommodation Found</h1>
+            <p>Add your first accommodation to manage your listings!</p>
+            <button onclick="addAccommodation()">Add Accommodation</button>
+            <button onclick="logout()">Logout</button>
+
+        </div>
+
+        <div id="ownerAccommodationSection" style="display: none;">
+            <h1>Your Accommodation</h1>
+            <div id="accommodationDetails">
+                <h2 id="accommodationName"></h2>
+                <p><strong>Price:</strong> <span id="price"></span></p>
+                <p><strong>Location:</strong> <span id="location"></span></p>
+                <p><strong>Address:</strong> <span id="address"></span></p>
+                <p><strong>Landmark:</strong> <span id="landmark"></span></p>
+                <p><strong>Description:</strong> <span id="description"></span></p>
+                <p><strong>Total Rooms:</strong> <span id="totalRooms"></span></p>
+                <p><strong>Gender Preference:</strong> <span id="genderPreference"></span></p>
+                <p><strong>Food Type:</strong> <span id="foodType"></span></p>
+                <p><strong>Room Sharing:</strong> <span id="roomSharing"></span></p>
+                <p><strong>Bathrooms:</strong> <span id="bathroom"></span></p>
+                <p><strong>Facilities:</strong>
+                <ul id="facilitiesList"></ul>
+                </p>
+                <p><strong>Restrictions:</strong> <span id="restrictions"></span></p>
+                <p><strong>Contact:</strong> <span id="contact"></span></p>
+                <div>
+                    <button onclick="editAccommodation()">Edit</button>
+                    <button onclick="logout()">Logout</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Add/Edit Accommodation Form -->
+        <form id="accommodationForm" style="display: none;" onsubmit="saveAccommodation(event)">
+            <h2 id="formTitle">Add Accommodation</h2>
+            <input type="text" id="accommodationNameInput" placeholder="Accommodation Name" required>
+            <input type="number" id="priceInput" placeholder="Price" required>
+            <input type="text" id="locationInput" placeholder="Location" required>
+            <input type="text" id="addressInput" placeholder="Address" required>
+            <input type="text" id="landmarkInput" placeholder="Landmark (optional)">
+            <textarea id="descriptionInput" placeholder="Description" required></textarea>
+            <input type="number" id="totalRoomsInput" placeholder="Total Rooms" required>
+            <select id="genderPreferenceInput">
+                <option value="boys">Boys</option>
+                <option value="girls">Girls</option>
+                <option value="both">Both</option>
+            </select>
+            <select id="foodTypeInput">
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+                <option value="both">Both</option>
+            </select>
+            <div>
+                <label>Room Sharing:</label>
+                <input type="checkbox" value="single" id="roomSharingSingle"> Single
+                <input type="checkbox" value="double" id="roomSharingDouble"> Double
+                <input type="checkbox" value="triple" id="roomSharingTriple"> Triple
+            </div>
+            <div>
+                <label>Bathrooms:</label>
+                <input type="checkbox" value="attach" id="bathroomAttach"> Attach
+                <input type="checkbox" value="common" id="bathroomCommon"> Common
+            </div>
+            <textarea id="restrictionsInput" placeholder="Restrictions" required></textarea>
+            <textarea id="facilitiesInput" placeholder="Facilities (Comma-separated)" required></textarea>
+            <textarea id="picturesInput" placeholder="Pictures (Comma-separated URLs [only images/pg_image.jpg formate])" required></textarea>
+            <input type="text" id="contactInput" placeholder="Contact" required>
+
+            <button type="submit">Save</button>
+            <button type="button" onclick="cancelEdit()">Cancel</button>
+        </form>
+
+        <!-- Profile Modal -->
+        <div id="loginModal" class="modal">
+            <div class="login-modal-content">
+                <span class="close">&times;</span>
+                <h2>Owner Login</h2>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <!-- <select id="loginRole">
+                    <option value="user">User</option>
+                    <option value="owner">Owner</option>
+                </select> -->
+                <button onclick="login()">Login</button>
+                <p>Not registered? <a href="#" onclick="openRegisterModal()">Register here</a></p>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div id="registerModal" class="modal">
+            <div class="login-modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Owner Register</h2>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <button onclick="register()">Register</button>
+                <p>Already have an account? <a href="#" onclick="openLoginModal()">Login here</a></p>
+            </div>
+        </div>
+
+    </main>
+    <footer id="footer">
+        <p><b>Contact us:</b><br>
+            <u>Email</u><br>
+            <u>Facebook</u><br>
+            <u>Instagram</u><br>
+            <u>Twitter</u>
+        </p><br>
+        <p>Designed and developed by Suman&#9829;</p>
+        <br>
+        <p>&copy; 2024 HostFinder. All rights reserved.</p>
+    </footer>
+
+    <script src="owner-script.js"></script>
+</body>
+
+</html>
